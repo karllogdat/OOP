@@ -49,4 +49,16 @@ public class StringToolkit {
 			return false;
 		}
 	}
+
+	public static String toLowerCase(String str) {
+		char[] chrArray = str.toCharArray();
+
+		for (int i = 0; i < str.length(); i++) {
+			if (chrArray[i] >= 'A' && chrArray[i] <= 'Z') {
+				chrArray[i] += 32;
+			}
+		}
+
+		return chrArray.toString();
+	}
 }

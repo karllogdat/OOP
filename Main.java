@@ -6,7 +6,7 @@ public class Main {
 		int input = -1;
 
 		System.out.println("Enter an option between 1-10");
-		while(input == -1) {
+		while (input == -1) {
 			input = console.nextInt();
 
 			if (input >= 1 && input <= 10) {
@@ -34,6 +34,7 @@ public class Main {
 		System.out.println(StringToolkit.reverse(input));
 		System.out.println(StringToolkit.isPalindrome(input));
 		System.out.println(StringToolkit.isAnagram(input, input2));
+		System.out.println(StringToolkit.toLowerCase(input));
 
 		console.close();
 	}
