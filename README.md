@@ -2,9 +2,7 @@
 
 ## Method Definition
 
-`reverse(String str)`
-
-| | |
+| Method | `String reverse(String str)` |
 |---|---|
 | Returns | `String` |
 | Parameter/s | `String str` | 
@@ -27,3 +25,12 @@ public static String reverse(String str) {
 		return new String(reversed);
 	}
 ```
+
+| Method | `boolean isPalindrome(String str)` |
+|---|---|
+| Returns | `boolean` |
+| Parameter/s | `String str` | 
+| Description | Checks whether the input string is a palindrome. | 
+
+! TODO !
+[ ] add input normalization in method
