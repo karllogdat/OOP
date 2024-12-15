@@ -89,11 +89,34 @@ public class StringToolkit {
 		}
 	}
 
+	/**
+	 * Converts a string to lowercase using the built-in toLowerCase() method
+	 *
+	 * @param str string to convert
+	 * @return lowercase string 
+	 */
 	public static String toLowerCase(String str) {
 		return str.toLowerCase();
 	}
 
+        /**
+	 * Converts a string to uppercase using the built-in toUpperCase() method
+	 *
+	 * @param str string to convert
+	 * @return uppercase string 
+	 */
 	public static String toUpperCase(String str) {
 		return str.toUpperCase();
+	}
+
+	public static String removeVowels(String str) {
+		return str.replaceAll("[aeiouAEIOU]", "");
+	}
+
+	public static String removeConsonants(String str) {
+		return str.replaceAll(
+				"[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]",
+				""
+				);
 	}
 }

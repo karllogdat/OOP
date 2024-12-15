@@ -36,6 +36,8 @@ public class Main {
 		System.out.println(StringToolkit.isAnagram(input, input2));
 		System.out.println(StringToolkit.toLowerCase(input));
 		System.out.println(StringToolkit.toUpperCase(input2));
+		System.out.println(StringToolkit.removeVowels(input));
+		System.out.println(StringToolkit.removeConsonants(input));
 
 		console.close();
 	}
