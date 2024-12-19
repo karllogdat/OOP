@@ -90,6 +90,30 @@ public class StringToolkit {
 	}
 
 	/**
+	 * Counts all the words in the given string 
+	 *
+	 * @param str string to count all words
+	 * @return word count
+	 */
+	public static int wordCount(String str) {
+		return str.split(" ").length;
+	}
+
+	/**
+	 * Counts all characters in the given string
+	 * <p>
+	 * Whitespaces do not count as characters and as such replaced.
+	 *
+	 * @param str string to count all characters
+	 * @return character count
+	 */
+	public static int characterCount(String str) {
+		return str.replaceAll(" ", "").length();
+	}
+
+	// TODO: implement substring finder
+
+	/**
 	 * Converts a string to lowercase using the built-in toLowerCase() method
 	 *
 	 * @param str string to convert
