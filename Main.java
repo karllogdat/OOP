@@ -41,6 +41,12 @@ public class Main {
 		System.out.println(StringToolkit.characterCount(input));
 		System.out.println(StringToolkit.wordCount(input));
 
+		int substringIndexes[] = StringToolkit.substringFinder(input, input2);
+		for (int index : substringIndexes) {
+			System.out.print(index + " ");
+		}
+		System.out.print("\n");
+
 		console.close();
 	}
 }

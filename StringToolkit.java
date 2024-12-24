@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StringToolkit {
@@ -111,7 +112,22 @@ public class StringToolkit {
 		return str.replaceAll(" ", "").length();
 	}
 
-	// TODO: implement substring finder
+	public static int[] substringFinder(String str, String substr) {
+		ArrayList<Integer> indexes = new ArrayList<>();
+
+		for (int i = 0; i < str.length() - substr.length(); i++) {
+			if (substr.equals(str.substring(i, i+substr.length()))) {
+				indexes.add(i);
+			}
+		}
+
+		int indexes_arr[] = new int[indexes.size()];
+		for (int i = 0; i < indexes.size(); i++) {
+			indexes_arr[i] = indexes.get(i);
+		}
+
+		return indexes_arr;
+	}
 
 	/**
 	 * Converts a string to lowercase using the built-in toLowerCase() method
@@ -133,10 +149,22 @@ public class StringToolkit {
 		return str.toUpperCase();
 	}
 
+	/**
+	 * Remove all vowels in given string 
+	 *
+	 * @param str target strings 
+	 * @return string with removed vowels 
+	 */
 	public static String removeVowels(String str) {
 		return str.replaceAll("[aeiouAEIOU]", "");
 	}
 
+	/**
+	 * Remove all consonants in given string 
+	 *
+	 * @param str target string 
+	 * @return string with removed consonants 
+	 */
 	public static String removeConsonants(String str) {
 		return str.replaceAll(
 				"[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]",
