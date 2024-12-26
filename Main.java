@@ -1,51 +1,64 @@
 import java.util.Scanner;
 
 public class Main {
-	private static int getUserInput() {
-		Scanner console = new Scanner(System.in);
-		int input = -1;
+	static String[] getUserSentences(Scanner scanner) {
+		String[] sentences = new String[3];
 
-		System.out.println("Enter an option between 1-10");
-		while (input == -1) {
-			input = console.nextInt();
-
-			if (input >= 1 && input <= 10) {
-				break;
-			} else {
-				System.out.println("Please enter a valid option (1-10)");
-				input = -1;
-			}
+		for (int i = 0; i < 3; i++) {
+			System.out.print("SENTENCE >> ");
+			sentences[i] = scanner.nextLine();
 		}
 
-		console.close();
-		return input;
-	}
-
-	private static void processUserInput(int input) {
-
+		return sentences;
 	}
 
 	public static void main(String args[]) {
 		Scanner console = new Scanner(System.in);
 
-		String input = console.nextLine();
-		String input2 = console.nextLine();
+		System.out.println("====================================================");
+		System.out.println("String Manipulation Toolkit");
+		System.out.println("====================================================");
+		System.out.println("To use the tool, enter a valid choice between 1-10.");
+		System.out.println("Then you will be prompted to enter 3 sentences, each");
+		System.out.println("sentence is separated by a newline.");
+		System.out.println("====================================================");
 
-		System.out.println(StringToolkit.reverse(input));
-		System.out.println(StringToolkit.isPalindrome(input));
-		System.out.println(StringToolkit.isAnagram(input, input2));
-		System.out.println(StringToolkit.toLowerCase(input));
-		System.out.println(StringToolkit.toUpperCase(input2));
-		System.out.println(StringToolkit.removeVowels(input));
-		System.out.println(StringToolkit.removeConsonants(input));
-		System.out.println(StringToolkit.characterCount(input));
-		System.out.println(StringToolkit.wordCount(input));
+		System.out.print("");
+		System.out.println("Enter choice between 1-10: ");
+		System.out.println("    [1] : String Reversal");
+		System.out.println("    [2] : Palindrome Checker");
+		System.out.println("    [3] : Anagram Checker");
+		System.out.println("    [4] : Word Count");
+		System.out.println("    [5] : Character Count");
+		System.out.println("    [6] : Substring Finder");
+		System.out.println("    [7] : Lower Case Converter");
+		System.out.println("    [8] : Upper Case Converter");
+		System.out.println("    [9] : Vowel Remover");
+		System.out.println("    [10]: Consonant Remover");
 
-		int substringIndexes[] = StringToolkit.substringFinder(input, input2);
-		for (int index : substringIndexes) {
-			System.out.print(index + " ");
+		System.out.print("");
+		System.out.print("CHOICE   >> ");
+		int iChoice = console.nextInt();
+		console.nextLine();
+		System.out.print("");
+
+		String[] userSentences = getUserSentences(console);
+		System.out.print("");
+
+		switch (iChoice) {
+			case 1:
+				for (String sentence : userSentences) {
+					System.out.println("REVERSED: " + StringToolkit.reverse(sentence));
+				}
+				break;
+
+			case 2: 
+				break;
+
+			default: 
+				System.out.println("Invalid choice: " + iChoice);
+				break;
 		}
-		System.out.print("\n");
 
 		console.close();
 	}
