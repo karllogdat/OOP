@@ -70,3 +70,89 @@ public static boolean isAnagram(String str1, String str2) {
 		}
 	}
 ```
+
+| Method | `int wordCount(String str)` | 
+| --- | --- |
+| Returns | `int` |
+| Parameter\s | `String str` |
+| Description | Counts all the words in a given string |
+
+Words, in this context, are tokens which are separated by whitespaces. 
+
+The method splits the input string `str` using the whitespace delimiter `" "` and returns the resulting array length. 
+
+```java
+public static int wordCount(String str) {
+		return str.split(" ").length;
+	}
+```
+
+| Method | `int characterCount(String str)` |
+| --- | --- |
+| Returns | `int` |
+| Parameter\s | `String str` | 
+| Description | Counts all characters in the given string | 
+
+TODO:
+[ ] Exclude ALL whitespace characters such as `\t`, `\n`, etc.
+
+| Method | `int[] substringFinder(String str)` |
+| --- | --- |
+| Returns | `int[]` |
+| Parameter/s | `String str`, `String substr` |
+| Description | Locates the indexes where the `substr` is found in the `str`. Returns the indexes as an integers array. | 
+
+The method utilizes a dynamic array class  of type integer `ArrayList<Integer>`, 
+since the number of occurences is unknown.
+
+Using a `for` loop, the method iterates over the `str` and checks the substring at the current index. 
+If the substring is equal to `substr`, the current index is added to the dynamic array.
+
+Lastly, the dynamic array is converted to a static array using a for loop.
+
+```java
+public static int[] substringFinder(String str, String substr) {
+		ArrayList<Integer> indexes = new ArrayList<>();
+
+		for (int i = 0; i < str.length() - substr.length(); i++) {
+			if (substr.equals(str.substring(i, i+substr.length()))) {
+				indexes.add(i);
+			}
+		}
+
+		int indexes_arr[] = new int[indexes.size()];
+		for (int i = 0; i < indexes.size(); i++) {
+			indexes_arr[i] = indexes.get(i);
+		}
+
+		return indexes_arr;
+	}
+```
+
+| Method | `String toLowerCase(String str)` |
+| --- | --- | 
+| Returns | `String` | 
+| Parameter/s | `String str` | 
+| Description | Converts a given string to all lowercase characters | 
+
+The method utilizes the `String` class' built-in `toLowerCase()` method.
+
+```java
+public static String toLowerCase(String str) {
+		return str.toLowerCase();
+	}
+```
+
+| Method | `String toUpperCase(String str)` |
+| --- | --- | 
+| Returns | `String` | 
+| Parameter/s | `String str` | 
+| Description | Converts a given string to all uppercase characters | 
+
+The method utilizes the `String` class' built-in `toUpperCase()` method.
+
+```java
+public static String toUpperCase(String str) {
+		return str.toUpperCase();
+	}
+```
