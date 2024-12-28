@@ -32,8 +32,34 @@ public static String reverse(String str) {
 | Parameter/s | `String str` | 
 | Description | Checks whether the input string is a palindrome. | 
 
-TODO:
-[ ] add input normalization in method
+First cleans the string using `clean()`. 
+Next, the `startIndex`, `endIndex`, and `mid` is obtained, and the string is looped over and compares the characters in the `startIndex` and `endIndex` until the middle.
+The `startIndex` and `endIndex` is incremented and decremented respectively.
+
+```java
+public static boolean isPalindrome(String str) {
+		if (str == null || str.isEmpty()) {
+			return false;
+		}
+
+		str = clean(str);
+
+		int mid = str.length() / 2;
+		int startIndex = 0;
+		int endIndex = str.length() - 1;
+
+		while (startIndex <= mid) {
+			if (str.charAt(startIndex) != str.charAt(endIndex)) {
+				return false;
+			}
+
+			startIndex++;
+			endIndex--;
+		}
+
+		return true;
+	}
+```
 
 | Method | `boolean isAnagram(String str1, String str2)` |
 |---|---|
@@ -93,8 +119,14 @@ public static int wordCount(String str) {
 | Parameter\s | `String str` | 
 | Description | Counts all characters in the given string | 
 
-TODO:
-[ ] Exclude ALL whitespace characters such as `\t`, `\n`, etc.
+All whitespace characters are removed using the `String` class' built-in replace all method.
+Whitespaces include `" "`, `\t` and `\n`.
+
+```java
+public static int characterCount(String str) {
+		return str.replaceAll("\\s", "").length();
+	}
+```
 
 | Method | `int[] substringFinder(String str)` |
 | --- | --- |

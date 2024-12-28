@@ -12,7 +12,7 @@ public class StringToolkit {
 	private static String clean(String str) {
 		str = str.toLowerCase();
 		str = str.trim();
-		str = str.replaceAll("[a-zA-Z0-9]", "");
+		str = str.replaceAll("[^a-zA-Z0-9]", "");
 
 		return str;
 	}
@@ -42,6 +42,8 @@ public class StringToolkit {
 		if (str == null || str.isEmpty()) {
 			return false;
 		}
+
+		str = clean(str);
 
 		int mid = str.length() / 2;
 		int startIndex = 0;
@@ -109,7 +111,7 @@ public class StringToolkit {
 	 * @return character count
 	 */
 	public static int characterCount(String str) {
-		return str.replaceAll(" ", "").length();
+		return str.replaceAll("\\s", "").length();
 	}
 
 	public static int[] substringFinder(String str, String substr) {
