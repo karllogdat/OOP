@@ -1,17 +1,6 @@
 import java.util.Scanner;
 
 public class Main {
-	static String[] getUserSentences(Scanner scanner) {
-		String[] sentences = new String[3];
-
-		for (int i = 0; i < 3; i++) {
-			System.out.print("SENTENCE >> ");
-			sentences[i] = scanner.nextLine();
-		}
-
-		return sentences;
-	}
-
 	public static void main(String args[]) {
 		Scanner console = new Scanner(System.in);
 
@@ -42,17 +31,63 @@ public class Main {
 		console.nextLine();
 		System.out.print("");
 
-		String[] userSentences = getUserSentences(console);
+		System.out.print("ENTER STRING >> ");
+		String userSentences = console.nextLine();
 		System.out.print("");
 
 		switch (iChoice) {
 			case 1:
-				for (String sentence : userSentences) {
-					System.out.println("REVERSED: " + StringToolkit.reverse(sentence));
-				}
+				System.out.println("REVERSED >> " + StringToolkit.reverse(userSentences));
 				break;
 
 			case 2: 
+				System.out.println("IS PALINDROME? >> " + StringToolkit.isPalindrome(userSentences));
+				break;
+
+			case 3: 
+				System.out.print("ENTER STRING TO COMPARE TO >> ");
+				String compareAgainst = console.nextLine();
+				System.out.println("Comparing against \"" + compareAgainst + "\"");
+				System.out.println("IS ANAGRAM? >> " + StringToolkit.isAnagram(userSentences, compareAgainst));
+				break;
+
+			case 4: 
+				System.out.println("WORD COUNT >> " + StringToolkit.wordCount(userSentences));
+				break;
+				
+			case 5:
+				System.out.println("CHAR COUNT >> " + StringToolkit.characterCount(userSentences));
+				break;
+
+			case 6: 
+				// TODO: fix substringFinder()
+				// substringFinder() has problems, 
+				// try str = "this this this this"
+				// try substr = "this"
+				// expected output: 0, 5, 10, 15
+				// actual output  : 0, 5, 10
+				System.out.print("ENTER SUBSTRING >> ");
+				String substr = console.nextLine();
+				System.out.println("Substring \"" + substr + "\" is found at indexes: ");
+				for (int index : StringToolkit.substringFinder(userSentences, substr)) {
+					System.out.println("    [" + index + "]");
+				}
+				break;
+
+			case 7:
+				System.out.println("LOWERCASED >> " + StringToolkit.toLowerCase(userSentences));
+				break;
+
+                        case 8:
+				System.out.println("UPPERCASED >> " + StringToolkit.toUpperCase(userSentences));
+				break;
+
+			case 9:
+				System.out.println("NO VOWELS >> " + StringToolkit.removeVowels(userSentences));
+				break;
+
+			case 10:
+				System.out.println("NO CONSONANTS >> " + StringToolkit.removeConsonants(userSentences));
 				break;
 
 			default: 
