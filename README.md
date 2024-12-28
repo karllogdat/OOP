@@ -32,7 +32,7 @@ public static String reverse(String str) {
 | Parameter/s | `String str` | 
 | Description | Checks whether the input string is a palindrome. | 
 
-! TODO !
+TODO:
 [ ] add input normalization in method
 
 | Method | `boolean isAnagram(String str1, String str2)` |
