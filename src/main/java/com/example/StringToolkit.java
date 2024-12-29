@@ -41,8 +41,8 @@ public class StringToolkit {
 	 * @param str string to check
 	 */
 	public static boolean isPalindrome(String str) {
-		if (str == null || str.isEmpty()) {
-			return false;
+		if (str.isEmpty()) {
+			return true;
 		}
 
 		str = clean(str);
@@ -101,6 +101,9 @@ public class StringToolkit {
 	 * @return word count
 	 */
 	public static int wordCount(String str) {
+		if (str.isEmpty()) {
+			return 0;
+		}
 		return str.split(" ").length;
 	}
 
