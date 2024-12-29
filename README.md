@@ -146,7 +146,7 @@ Lastly, the dynamic array is converted to a static array using a for loop.
 public static int[] substringFinder(String str, String substr) {
 		ArrayList<Integer> indexes = new ArrayList<>();
 
-		for (int i = 0; i < str.length() - substr.length(); i++) {
+		for (int i = 0; i < str.length() - substr.length() + 1; i++) {
 			if (substr.equals(str.substring(i, i+substr.length()))) {
 				indexes.add(i);
 			}
