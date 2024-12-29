@@ -1,5 +1,16 @@
 # Machine Problem Repository
 
+## Variable Definition
+
+### `App.java` Variables
+
+- `Scanner console`. `Scanner` object where user input is obtained.
+- `int choice`. User input for choice of string manipulation method.
+- `String userSentences`. Variable for storing the user's string input.
+- `String compareAgainst`. Variable used in `isAnagram()` case. Stores the user input of string to compare against `userSentences`.
+- `String substr`. Stores user input for substring in `substringFinder()` case. 
+- `int index`. Local `for` loop variable to access indexes returned by `substringFinder()` method.
+
 ## Method Definition
 
 | Method | `String reverse(String str)` |
@@ -188,3 +199,34 @@ public static String toUpperCase(String str) {
 		return str.toUpperCase();
 	}
 ```
+
+## Developer Notes 
+
+### Project Overview
+
+[GitHub Project Repository](https://github.com/karllogdat/OOP)
+
+Initially, the project is split into 2 files. The main `App.java` and the toolkit's class `StringToolkit.java`.
+This improves code readability and modularizes the toolkit as all methods are encapsulated within one class, 
+leading to choices such as making all the public methods as `static` methods. This meant that the class does 
+not need to be initialized and only imported in the file the developer plans to use. 
+
+To simplify the testing and building process, Maven was used to manage the project and its dependencies 
+(which are the testing packages). 
+
+Tests are located in `src/test/java/com/example/StringToolkitTest.java`. 10 tests are written, 1 for each 
+method in the class. Attached is are the tests for each method.
+
+[!] insert test cases here
+[!] remember to fix the code snippets are they are outdated
+
+### Other Methods 
+
+| Method | `String clean(String str)` |
+| --- | --- | 
+| Returns | `String` | 
+| Parameter/s | `String str` | 
+| Description |  Trims whitespaces, converts all characters to lowercase, and removes special characters | 
+
+`clean()` is used as a private normalization method in cases where whitespaces and special characters are not of importance.
+The methods `isPalindrome()` and `isAnagram()` use the `clean()` method.

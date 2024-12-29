@@ -29,7 +29,7 @@ public class App {
 
 		System.out.print("");
 		System.out.print("CHOICE   >> ");
-		int iChoice = console.nextInt();
+		int choice = console.nextInt();
 		console.nextLine();
 		System.out.print("");
 
@@ -37,7 +37,7 @@ public class App {
 		String userSentences = console.nextLine();
 		System.out.print("");
 
-		switch (iChoice) {
+		switch (choice) {
 			case 1:
 				System.out.println("REVERSED >> " + StringToolkit.reverse(userSentences));
 				break;
@@ -93,7 +93,7 @@ public class App {
 				break;
 
 			default: 
-				System.out.println("Invalid choice: " + iChoice);
+				System.out.println("Invalid choice: " + choice);
 				break;
 		}
 
